@@ -98,18 +98,34 @@ public class Assignment {
         return trappedWater;
     }
 
+    //3SUM
+    public static void threesum(int array[]){
+        for(int i = 0 ; i < array.length-2; i++){
+            for(int j = i+1 ; j<array.length-1; j++){
+                for(int k = j+1 ; k<array.length ; k++){
+                    if(array[i]+array[j]+array[k] == 0){
+                        System.out.println("[" + array[i] + "," + array[j] + "," + array[k] + "]");
+                    }
+                }
+            }
+        }
+        // return -1;
+    }
     
+  
 
     public static void main(String args[]){
         // int nums [] = {2,3,5,6,2};
         int nums [] = {4,5,6,7,0,1,2};
         int prices[] ={7, 6, 4,  3, 1};
         int height[] ={4,2,0,3,2,5};
+        int array [] = {-1 , 0 , 1, 2 , -1 , -4};
 
 
         System.out.println(containDuplicate(nums));
         System.out.println(search(nums, 3));
         System.out.println(buyAndSell(prices));
         System.out.println(trappedRainWater(height));
+        threesum(array);
     }
 }
