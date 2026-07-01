@@ -33,6 +33,9 @@ public class operationOnBits{
         int bitMask=a|b;
         return n & bitMask;
     }
+    public static boolean isPowerOfTwo(int n){
+        return (n & (n-1))==0;
+    }
 
     public static void main(String args[]){
         int n=15;
@@ -45,5 +48,6 @@ public class operationOnBits{
         System.out.println("Update " + i + "th bit to 1: " + updateIthBit(n, i, 1));
         System.out.println("Clear last " + i + " bits: " + clearLastIBits(n, i));
         System.out.println("Clear bits in range [" + i + ", " + j + "]: " + clearBitsInRange(n, i, j));
+        System.out.println("Is " + n + " a power of two? " + isPowerOfTwo(n));
     }
 }
