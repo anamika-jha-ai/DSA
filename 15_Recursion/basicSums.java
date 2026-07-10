@@ -25,9 +25,18 @@ public class basicSums{
        
         return fib(n-1) + fib(n-2);
     }
+
+    //printing power
+    public static int power(int a, int b){
+        if(b==0){
+            return 1;
+        }
+        return a * power(a, b-1);
+    }
     public static void main (String args[]){
         System.out.println(fact(5));
         System.out.println(calcSum(5));
         System.out.println(fib(5));
+        System.out.println(power(2, 3));
     }
 }
