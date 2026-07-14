@@ -22,6 +22,14 @@ public class Assignment{
         return convertToString(n/10) + arr[lastDigit] + " ";
     }
 
+    //Q3. wap to find length of a string using recursion.
+    public static int lengthOfString(String str){
+        if(str.equals("")){
+            return 0;
+        }
+        return 1 + lengthOfString(str.substring(1));
+    }
+
 
     public static void main(String args[]){
             // int arr[] = {3,2,4,5,6,2,7,2,2};
@@ -29,6 +37,7 @@ public class Assignment{
             // findAllAoccurrences(arr, key, 0);
             // System.out.println();
             int n = 2819;
-            System.out.println(convertToString(n));
+            // System.out.println(convertToString(n));
+            System.out.println(lengthOfString("Hello"));
     }
 }
