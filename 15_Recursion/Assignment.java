@@ -46,7 +46,15 @@ public class Assignment{
         return count;
     }
 
-    //Q5
+    //Q5.tower of hanoi
+    public static void towerOfHanoi(int n, char source, char destination, char helper){
+        if(n==0){
+            return;
+        }
+        towerOfHanoi(n-1, source, helper, destination);
+        System.out.println("Move disk " + n + " from " + source + " to " + destination);
+        towerOfHanoi(n-1, helper, destination, source);
+    }
 
 
     public static void main(String args[]){
@@ -57,6 +65,7 @@ public class Assignment{
             // int n = 2819;
             // System.out.println(convertToString(n));
             // System.out.println(lengthOfString("Hello"));
-            System.out.println(countContiguousSubstrings("abcba"));
+            // System.out.println(countContiguousSubstrings("abcba"));
+            towerOfHanoi(3, 'A', 'B', 'C');
     }
 }
