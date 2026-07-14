@@ -30,14 +30,33 @@ public class Assignment{
         return 1 + lengthOfString(str.substring(1));
     }
 
+    //Q4. cout of all contigious substrings starting and ending with same character.
+    public static int countContiguousSubstrings(String str){
+        if(str.length() == 0){
+            return 0;
+        }
+        int count = 0;
+        for(int i=0; i<str.length(); i++){
+            for(int j=i; j<str.length(); j++){
+                if(str.charAt(i) == str.charAt(j)){
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+
+    //Q5
+
 
     public static void main(String args[]){
             // int arr[] = {3,2,4,5,6,2,7,2,2};
             // int key = 2;
             // findAllAoccurrences(arr, key, 0);
             // System.out.println();
-            int n = 2819;
+            // int n = 2819;
             // System.out.println(convertToString(n));
-            System.out.println(lengthOfString("Hello"));
+            // System.out.println(lengthOfString("Hello"));
+            System.out.println(countContiguousSubstrings("abcba"));
     }
 }
