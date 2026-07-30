@@ -41,7 +41,7 @@ class  assignment{
         return ans;
     }
 
-    //MAJORITY ELEMENT IN AN ARRAY
+    //MAJORITY ELEMENT IN AN ARRAY(BRUTE FORCE)
     public static int majorityElement(int arr[]){
         int count = 1;
         int element = arr[0];
@@ -66,6 +66,31 @@ class  assignment{
         if(count > arr.length/2){
             return element;
         }else{
+            return -1; // No majority element
+        }
+    }
+
+    //MAJORITY ELEMENT IN AN ARRAY(DIVIDE AND CONQUER)
+    public static int majorityElementDC(int arr[], int lo, int hi){
+        if(lo == hi){
+            return arr[lo];
+        }
+        int mid = (lo + hi) / 2;
+        int leftMajority = majorityElementDC(arr, lo, mid);
+        int rightMajority = majorityElementDC(arr, mid + 1, hi);
+
+        if(leftMajority == rightMajority){
+            return leftMajority;
+        }
+
+        int leftCount = countInRange(arr, leftMajority, lo, hi);
+        int rightCount = countInRange(arr, rightMajority, lo, hi);
+
+        if(leftCount > (hi - lo + 1) / 2){
+            return leftMajority;
+        } else if(rightCount > (hi - lo + 1) / 2){
+            return rightMajority;
+        } else {
             return -1; // No majority element
         }
     }
